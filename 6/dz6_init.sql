@@ -1,5 +1,5 @@
 DROP SCHEMA IF EXISTS `dz6`;
-CREATE SCHEMA `dz6`;
+CREATE SCHEMA IF NOT EXISTS `dz6`;
 USE `dz6`;
 
 -- пользователи
@@ -10,6 +10,8 @@ CREATE TABLE users (
     lastname VARCHAR(50) COMMENT 'Фамилия',
     email VARCHAR(120) UNIQUE
 );
+
+CREATE TABLE IF NOT EXISTS `users_old` like `users`;
 
 INSERT INTO users (id, firstname, lastname, email) VALUES 
 (1, 'Reuben', 'Nienow', 'arlo50@example.org'),
